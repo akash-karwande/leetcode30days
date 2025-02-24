@@ -11,3 +11,7 @@
  - Apply Transform Over Each Element in Array
  - Filter Elements from Array
  - Array Reduce Transformation
+
+### Function Transformations
+ - Function Composition
+
