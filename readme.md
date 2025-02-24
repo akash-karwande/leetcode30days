@@ -14,4 +14,5 @@
 
 ### Function Transformations
  - Function Composition
+ - Return Length of Arguments Passed
 

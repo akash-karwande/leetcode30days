@@ -38,5 +38,13 @@
 
   
   const fn = compose([(x) => x + 1, (x) => 2 * x]);
-  console.log(fn(4)); // 9
-//   console.log('ppl',fn)
+//   console.log(fn(4)); // 9
+
+// 2. Return Length of Arguments Passed
+
+var argumentsLength = function(...args) {
+    return args.length
+    
+};
+
+console.log(argumentsLength(1, 2, 3))  // 3
