@@ -72,3 +72,31 @@ var once = function(fn) {
   onceFn(2,3,6); // returns undefined without calling fn
   onceFn(2,3,6);
 
+
+//   4. Memoize
+
+const sum = (a, b) => a + b;
+function memoize(fn) {
+    let cache = {}
+    return function(...args) {
+        let key = JSON.stringify(args);
+        console.log(cache)
+        if(cache[key]) {
+            return cache[key];
+        } else {
+            cache[key] = fn(...args);
+            return cache[key]
+        }
+        
+    }
+}
+
+const result = memoize(sum);
+console.log(result(3,2));
+console.log(result(3,2));
+console.log(result(3,2));
+console.log(result(3,1));
+console.log(result(3,1));
+console.log(result(0,0));
+console.log(result(0,0));
+
