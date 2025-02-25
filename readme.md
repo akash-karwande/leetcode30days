@@ -18,3 +18,9 @@
  - Allow One Function Call
  - Memoize
 
+### Promises and Time
+ - Add Two Promises
+ - Sleep
+ - Timeout Cancellation
+ - Interval Cancellation
+
