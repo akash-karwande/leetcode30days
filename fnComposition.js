@@ -47,4 +47,28 @@ var argumentsLength = function(...args) {
     
 };
 
-console.log(argumentsLength(1, 2, 3))  // 3
+// console.log(argumentsLength(1, 2, 3))  // 3
+
+// 3.  Allow One Function Call
+ let fns = (a,b,c) => (a + b + c)
+var once = function(fn) {
+    let count = 0;
+    return function(...args){
+        if(count > 0) {
+            // console.log('already called')
+        } else {
+            fn(...args);
+            // console.log('called')
+            count++;
+        }
+    }
+};
+
+
+//   let fn = (a,b,c) => (a + b + c)
+  let onceFn = once(fns)
+ 
+  onceFn(1,2,3); // 6
+  onceFn(2,3,6); // returns undefined without calling fn
+  onceFn(2,3,6);
+

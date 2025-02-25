@@ -15,4 +15,5 @@
 ### Function Transformations
  - Function Composition
  - Return Length of Arguments Passed
+ - Allow One Function Call
 
