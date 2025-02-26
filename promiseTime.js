@@ -37,3 +37,27 @@ var cancellable = function(fn, args, t) {
     }, t);
     return () => clearInterval(timer);
 };
+
+
+// 5. Promise Time Limit
+
+var timeLimit = function(fn, t) {
+    
+    return async function(...args) {
+        return new Promise(async (resolve, reject) => {
+            let id = setTimeout(() => reject('Time Limit Exceeded'), t);
+            try {
+                let res = await fn(...args);
+                resolve(res);
+            } catch(err) {
+                reject(err);
+            }
+        })
+        
+    }
+};
+
+/**
+ * const limited = timeLimit((t) => new Promise(res => setTimeout(res, t)), 100);
+ * limited(150).catch(console.log) // "Time Limit Exceeded" at t=100ms
+ */

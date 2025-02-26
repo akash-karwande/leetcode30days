@@ -23,4 +23,5 @@
  - Sleep
  - Timeout Cancellation
  - Interval Cancellation
+ - Promise Time Limit
 
