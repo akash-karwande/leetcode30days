@@ -26,4 +26,5 @@
  - Promise Time Limit
  - Cache With Time Limit
  - Debounced
+ - Execute Asynchronous Functions in Parallel
 

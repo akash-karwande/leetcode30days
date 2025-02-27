@@ -118,3 +118,30 @@ var debounce = function(fn, t) {
  * log('Hello'); // cancelled
  * log('Hello'); // Logged at t=100ms
  */
+
+
+// 8. Execute Asynchronous Functions in Parallel
+
+var promiseAll = function(functions) {
+    return new Promise(async(resolve, reject) => {
+        let len = functions.length, count = 0;
+        let res = new Array(len)
+       functions.forEach(async (fn, i)=> {
+        try {
+            let singlePromise = await fn();
+            res[i] = singlePromise;
+            count++
+            if(count === len) resolve(res);
+        } catch (err) {
+            reject(err)
+        }
+       })
+
+});
+}
+
+/**
+ * const promise = promiseAll([() => new Promise(res => res(42))])
+ * promise.then(console.log); // [42]
+ */
+
