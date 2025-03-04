@@ -85,6 +85,26 @@ arr2 = [
     {"id": 2, "b": {"c": 84}, "v": [1, 3]}
 ]
 
-console.log(join(arr1, arr2));
+// console.log(join(arr1, arr2));
+
+// 7 . Flatten Deeply Nested Array
+
+var flatArr = function (arr, n) {
+    let res = [];
+    function helper(nextArr, depth) {
+        for(val of nextArr) {
+            if(typeof val === 'object' && depth < n) {
+                helper(val, depth + 1);
+            } else {
+                res.push(val);
+            }
+        }
+        return res;
+    }
+    return helper(arr, 0)
+};
+
+let arrNested = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 1]]
+console.log('flatArr', flatArr(arrNested, 1))
 
 
