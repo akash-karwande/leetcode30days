@@ -33,4 +33,6 @@
  - Is Object Empty
  - Chunk Array
  - Array Prototype Last
+ - Group By
+ - Sort By
 
