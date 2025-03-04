@@ -36,4 +36,5 @@
  - Group By
  - Sort By
  - Join Two Arrays by ID
+ - Flatten Deeply Nested Array
 
