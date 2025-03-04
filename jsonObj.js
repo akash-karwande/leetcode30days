@@ -62,19 +62,27 @@ var sortBy = function(arr, fn) {
 // Input: arr = [5, 4, 1, 2, 3], fn = (x) => x
 // Output: [1, 2, 3, 4, 5]
 
-// 6. 
+// 6. Join Two Arrays by ID
 
 var join = function(arr1, arr2) {
-    let temp = arr1.concat(arr2);
-    let result = new Set(temp);
-    return result;
+    let temp = [...arr1, ...arr2],  result = {};
+    temp.forEach((ele, index) => {
+       if(result.hasOwnProperty(ele.id)) {
+        result[ele.id] = {...result[ele.id], ...ele}
+       } else {
+         result[ele.id] = ele;
+       }
+    })
+
+    return Object.values(result);
 };
 
 arr1 = [
     {"id": 1, "b": {"b": 94},"v": [4, 3], "y": 48}
 ]
 arr2 = [
-    {"id": 1, "b": {"c": 84}, "v": [1, 3]}
+    {"id": 1, "b": {"c": 84}, "v": [1, 3]},
+    {"id": 2, "b": {"c": 84}, "v": [1, 3]}
 ]
 
 console.log(join(arr1, arr2));
