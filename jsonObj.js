@@ -105,6 +105,32 @@ var flatArr = function (arr, n) {
 };
 
 let arrNested = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 1]]
-console.log('flatArr', flatArr(arrNested, 1))
+// console.log('flatArr', flatArr(arrNested, 1))
+
+
+// 8. Compact Object
+
+var compactObject = function(obj) {
+    if( obj === null) {
+        return obj;
+    }
+    if(typeof obj !== 'object') {
+        return obj
+    }
+
+    if(Array.isArray(obj)) {
+        return obj.filter(Boolean).map(compactObject)
+    }
+
+    const compacted = {};
+    for (const key in obj) {
+        let value = compactObject(obj[key])
+        if(value) {
+            compacted[key] = value
+        }
+    }
+    return compacted
+
+};
 
 
