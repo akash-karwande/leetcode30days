@@ -62,4 +62,21 @@ var sortBy = function(arr, fn) {
 // Input: arr = [5, 4, 1, 2, 3], fn = (x) => x
 // Output: [1, 2, 3, 4, 5]
 
+// 6. 
+
+var join = function(arr1, arr2) {
+    let temp = arr1.concat(arr2);
+    let result = new Set(temp);
+    return result;
+};
+
+arr1 = [
+    {"id": 1, "b": {"b": 94},"v": [4, 3], "y": 48}
+]
+arr2 = [
+    {"id": 1, "b": {"c": 84}, "v": [1, 3]}
+]
+
+console.log(join(arr1, arr2));
+
 
