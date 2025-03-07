@@ -39,3 +39,6 @@
  - Flatten Deeply Nested Array
  - Compact Object
 
+### Classes
+ - Event Emitter
+
